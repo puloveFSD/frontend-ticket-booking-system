@@ -1,0 +1,38 @@
+<div class="bg-image">
+    <div class="container">
+        <div class="row justify-content">
+            <div class="col-md-6 mb-9">
+                <h1 class="heading-section text-danger">Book your Ticket Now</h1>
+            </div>
+        </div>
+        <div class="row justify-content">
+            <div class="col-md-6 col-lg-4">
+                <div class="login-wrap p-0">
+                   
+
+
+                    <form [formGroup]="loginForm" (ngSubmit)="login()">
+                        <div>
+
+                            <input type="text" class="form-control" id="username" formControlName="usernameDto"
+                                placeholder="Username">
+                        </div>
+                        <br>
+
+                        <div>
+
+                            <input type="password" class="form-control" id="password" formControlName="passwordDto"
+                                placeholder="Password">
+                        </div>
+                        <br>
+                        <div>
+                            <button class="btn btn-primary form-control px-3" type="submit">Login</button>
+                        </div>
+                        <br>
+                        <h3 class="mb-4 text-center text-warning">Don't have an account ? <b class="text-primary"><i> SignUp !</i></b></h3>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

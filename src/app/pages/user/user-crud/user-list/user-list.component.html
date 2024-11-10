@@ -1,0 +1,30 @@
+<div class="container mt-5">
+    <h3 class="text-center">All Users</h3>
+    <form>
+        <div class="form-row">
+
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Full Name</th>
+                        <th scope="col">Phone Number</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of userList">
+                        <td>{{user.userIdDto}}</td>
+                        <td>{{user.userFullNameDto}}</td>
+                        <td>{{user.userPhoneNumberDto}}</td>
+                        <td>{{user.userAddressDto}}</td>
+                        <td>{{user.userEmailDto}}</td>
+                        <td>
+                            <button class="btn btn-danger" (click)="deleteUser(user.userIdDto)">Delete</button>
+                            <button class="btn btn-warning" routerLink="/userUpdate/{{user.userIdDto}}">Edit</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>

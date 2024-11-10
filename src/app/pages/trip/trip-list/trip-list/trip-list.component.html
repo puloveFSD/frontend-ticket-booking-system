@@ -1,0 +1,37 @@
+<div class="container mt-5">
+    <h3 class="text-center">All Trip and allocated bus list</h3>
+    <form>
+        <div class="form-row">
+
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Trip Date</th>
+                        <th scope="col">Trip Departure Time</th>
+                        <th scope="col">Arrival Time</th>
+                        <th scope="col">Start > From</th>
+                        <th scope="col">Destination > To</th>
+                        <th scope="col">Trip Price</th>
+                        <th scope="col">Bus Allocated</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let trip of tripList">
+                        <td>{{trip.tripIdDto}}</td>
+                        <td>{{trip.tripDateDto}}</td>
+                        <td>{{trip.tripDepartureTimeDto}}</td>
+                        <td>{{trip.tripArrivalTimeDto}}</td>
+                        <td>{{trip.startLocationDtoId}}</td>
+                        <td>{{trip.destinationDtoId}}</td>
+                        <td>{{trip.ticketPricePerPersonDto}}</td>
+                        <td>{{trip.busIdDto}}</td>
+
+                        <td>
+                            <button class="btn btn-danger" (click)="deleteTrip(trip.tripIdDto)">Delete</button>
+                            <button class="btn btn-warning" routerLink="/updateTrip/{{trip.tripIdDto}}">Edit</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>

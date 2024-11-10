@@ -1,0 +1,73 @@
+<h1 class="container col-12">User Registration for the system</h1>
+<div class="form-group container my-5" >
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white text-center">
+                    <h4>User Entry Form</h4>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="userRegisterForm"(ngSubmit)="saveUser()">
+                        <!-- User ID (hidden field) -->
+                        <input type="hidden" name="userIdDto" id="userIdDto">
+                        
+                        <!-- Username -->
+                        <div class="mb-3">
+                            <label for="usernameDto" class="form-label">Username</label>
+                            <input type="text" class="form-control" formControlName="usernameDto" id="usernameDto" name="usernameDto" placeholder="Enter username" required>
+                        </div>
+
+                        <!-- Password -->
+                        <div class="mb-3">
+                            <label for="passwordDto" class="form-label">Password</label>
+                            <input type="password" class="form-control" formControlName="passwordDto" id="passwordDto" name="passwordDto" placeholder="Enter password" required>
+                        </div>
+
+                        <!-- User Role -->
+                        <div class="mb-3">
+                            <label for="userRole" class="form-label">User Role</label>
+                            <select class="form-select" formControlName="userRole"id="userRole" name="userRole" required>
+                                <option selected disabled value="">Choose role...</option>
+                              
+                                <option value="Passenger">User</option>
+                                <option value="Guest">Guest</option>
+                            </select>
+                        </div>
+
+                        <!-- Full Name -->
+                        <div class="mb-3">
+                            <label for="userFullNameDto" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" formControlName="userFullNameDto" id="userFullNameDto" name="userFullNameDto" placeholder="Enter full name" required>
+                        </div>
+
+                        <!-- Phone Number -->
+                        <div class="mb-3">
+                            <label for="userPhoneNumberDto" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" formControlName="userPhoneNumberDto" id="userPhoneNumberDto" name="userPhoneNumberDto" placeholder="Enter phone number" pattern="[0-9]{10}" required>
+                            <div class="form-text">Format: 10 digits</div>
+                        </div>
+
+                        <!-- Address -->
+                        <div class="mb-3">
+                            <label for="userAddressDto" class="form-label">Address</label>
+                            <input type="text" class="form-control" formControlName="userAddressDto" id="userAddressDto" name="userAddressDto" placeholder="Enter address" required>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="mb-3">
+                            <label for="userEmailDto" class="form-label">Email</label>
+                            <input type="email" class="form-control" formControlName="userEmailDto"id="userEmailDto" name="userEmailDto" placeholder="Enter email address" required>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="d-grid">
+                            <button type="submit" routerLink="user-crud" class="btn btn-primary">Submit Add/Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,20 @@
+<div class="container mt-5">
+    <form [formGroup]="locationForm"(ngSubmit)="saveLocation()"  class="border p-4 rounded bg-light">
+      <h4 class="mb-4">Location Details Form</h4>
+  
+      <div class="mb-3">
+        <label for="locationName" class="form-label">Location</label>
+        <input
+          type="text"
+          id="locationName"
+          name="locationName"
+          formControlName="locationNameDto"
+          class="form-control"
+          required
+        />
+      </div>
+  
+      <button type="submit" class="btn btn-primary" routerLink="location-list">Submit</button>
+    </form>
+  </div>
+  

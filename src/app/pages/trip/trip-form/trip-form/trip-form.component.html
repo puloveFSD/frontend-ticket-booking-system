@@ -1,0 +1,50 @@
+<div class="container mt-4">
+    <form [formGroup]="tripForm" (ngSubmit)="saveTrip()">
+
+        <div class="mb-3">
+            <label for="tripDateDto" class="form-label">Trip Date</label>
+            <input type="date" id="tripDateDto" class="form-control" formControlName="tripDateDto" required />
+        </div>
+        <div class="mb-3">
+            <label for="tripDepartureTimeDto" class="form-label">Departure Time</label>
+            <input type="time" id="tripDepartureTimeDto" class="form-control" formControlName="tripDepartureTimeDto"
+                required />
+        </div>
+        <div class="mb-3">
+            <label for="tripArrivalTimeDto" class="form-label">Arrival Time</label>
+            <input type="time" id="tripArrivalTimeDto" class="form-control" formControlName="tripArrivalTimeDto"
+                required />
+        </div>
+        <div class="mb-3">
+            <label for="startLocationDtoId" class="form-label">Start Location </label>
+            <select type="number" id="startLocationDtoId" class="form-control" formControlName="startLocationDtoId"
+        
+                required>
+                <option selected disabled value="">Choose Start Location ...</option>
+                <option *ngFor="let location of locationList" [value]="location.locationMasterIdDto">{{location.locationNameDto}}</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="destinationDtoId" class="form-label">Destination </label>
+            <select type="number" id="destinationDtoId" class="form-control" formControlName="destinationDtoId"
+                required>
+                <option selected disabled value="">Choose your destination you wanted to go...</option>
+                <option *ngFor="let location of locationList" [value]="location.locationMasterIdDto">{{location.locationNameDto}}</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="busIdDto" class="form-label">Bus Number</label>
+            <select type="number" id="busIdDto" class="form-control" formControlName="busIdDto"
+           required>
+           <option selected disabled value="">Choose Bus to Allocate...</option>
+           <option *ngFor="let bus of busList"[value]="bus.busIdDto">{{bus.busNumberDto}}</option>
+       </select>
+        </div>
+        <div class="mb-3">
+            <label for="ticketPricePerPersonDto" class="form-label">Ticket Price</label>
+            <input type="number" id="ticketPricePerPersonDto" class="form-control"
+                formControlName="ticketPricePerPersonDto" required />
+        </div>
+        <button type="submit" routerLink="trip-list" class="btn btn-primary">Submit</button>
+    </form>
+</div>

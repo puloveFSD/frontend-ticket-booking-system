@@ -1,0 +1,31 @@
+<div class="container mt-5">
+    <h3 class="text-center">All Bus in the Database</h3>
+    <form>
+        <div class="form-row">
+
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Bus Operator Name</th>
+                        <th scope="col">Bus Number</th>
+                        <th scope="col">Bus Type</th>
+                        <th scope="col">Total Seats</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let bus of busList">
+                        <td>{{bus.busIdDto}}</td>
+                        <td>{{bus.busOperatorNameDto}}</td>
+                        <td>{{bus.busNumberDto}}</td>
+                        <td>{{bus.busTypeDto}}</td>
+                        <td>{{bus.busTotalSeatsDto}}</td>
+
+                        <td>
+                            <button class="btn btn-danger"(click)="deleteBus(bus.busIdDto)">Delete</button>
+                            <button class="btn btn-warning" routerLink="/busUpdate/{{bus.busIdDto}}">Edit</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
