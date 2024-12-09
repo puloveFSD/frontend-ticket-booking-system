@@ -9,9 +9,15 @@ import { LocationFormComponent } from './pages/location/location-form/location-f
 import { LocationListComponent } from './pages/location/location-list/location-list/location-list.component';
 import { TripFormComponent } from './pages/trip/trip-form/trip-form/trip-form.component';
 import { TripListComponent } from './pages/trip/trip-list/trip-list/trip-list.component';
+import { AppComponent } from './app.component';
+import { TicketIssueFormComponent } from './pages/ticket-issue/ticket-issue-form/ticket-issue-form/ticket-issue-form.component';
+import { TicketIssueListComponent } from './pages/ticket-issue/ticket-issue-list/ticket-issue-list/ticket-issue-list.component';
+import { SeatFormComponent } from './pages/seat/seat-form/seat-form/seat-form.component';
+import { SeatListComponent } from './pages/seat/seat-list/seat-list/seat-list.component';
 
 export const routes: Routes = [
-    { "path": '#', component: LoginComponent },
+    { "path": '', component: LoginComponent },
+    { "path": 'app', component: AppComponent },
     { "path": 'user', component: UserFormComponent },
     { "path": 'user-list', component: UserListComponent },
     { "path": 'bus', component: BusFormComponent },
@@ -23,7 +29,13 @@ export const routes: Routes = [
     { "path": 'locationUpdate/:id', component: LocationFormComponent },
     { "path": 'trip', component: TripFormComponent },
     { "path": 'trip-list', component: TripListComponent },
-    { "path": 'updateTrip/:id', component: TripFormComponent }
+    { "path": 'updateTrip/:id', component: TripFormComponent },
+    { "path": 'ticket-issue', component: TicketIssueFormComponent },
+    { "path": 'ticket-issue-list', component: TicketIssueListComponent },
+    { "path": 'selectBus/:id', component: TicketIssueListComponent },
+    { "path": 'seat', component: SeatFormComponent },
+    { "path": 'seat-list', component: SeatListComponent }
+
 
 
 ];

@@ -1,0 +1,30 @@
+<div class="container mt-5">
+    <form [formGroup]="seatForm"(ngSubmit)="saveSeat()"  class="border p-4 rounded bg-light">
+      <h4 class="mb-4">Seat Number for Bus</h4>
+  
+      <div class="mb-3">
+        <label for="seatNumberDto" class="form-label">Seat Number</label>
+        <input
+          type="text"
+          id="seatNumberDto"
+          name="seatNumberDto"
+          formControlName="seatNumberDto"
+          class="form-control"
+          required
+        />
+      </div>
+  
+      <div class="mb-3">
+        <label for="bus" class="form-label">Bus </label>
+        <select type="number" id="bus" class="form-control" formControlName="busIdDto"
+    
+            required>
+            <option selected disabled value="">Choose a Bus ...</option>
+            <option *ngFor="let bus of busList" [value]="bus.busIdDto">{{bus.busNumberDto}}</option>
+        </select>
+    </div>
+    
+      <button type="submit" class="btn btn-primary" routerLink="seat-list" [disabled]="">Submit</button>
+    </form>
+  </div>
+  

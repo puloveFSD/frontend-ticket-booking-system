@@ -1,0 +1,27 @@
+<div class="container mt-5">
+    <h3 class="text-center">Seat According to The Bus</h3>
+    <form>
+        <div class="form-row">
+
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Seat Number</th>
+                        <th scope="col">Bus Num
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let seat of seatList">
+                        <td>{{seat.setIdDto}}</td>
+                        <td>{{seat.seatNumberDto}}</td>
+                        <td>{{getBusById(seat.busIdDto)}}</td>
+                       
+
+                        <td>
+                            <button class="btn btn-danger">Delete</button>
+                            <button class="btn btn-warning" routerLink="/busUpdate/{{seat.busIdDto}}">Edit</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>

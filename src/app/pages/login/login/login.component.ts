@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
       next: (user: User) => {
         
           //alert('successful')
-          this.router.navigate(['user'])
+          this.router.navigate(['app'])
         } ,error:(error)=>{
           alert("Error occured")
         }

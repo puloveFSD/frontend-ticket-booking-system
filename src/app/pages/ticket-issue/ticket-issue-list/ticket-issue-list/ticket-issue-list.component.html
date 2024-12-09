@@ -1,0 +1,49 @@
+<div class="container mt-5">
+    <form action="" [formGroup]="ticketForm" (ngSubmit)="saveTicketIssue()" class="border p-4 rounded bg-light"> <br>
+        <b class="mt-5">Bus Selected</b>
+
+        <div class="mb-3">
+            <label for="numberOfPassengerDto" class="form-label">No of Passenger</label>
+            <input type="number" id="numberOfPassengerDto" name="numberOfPassengerDto"
+                formControlName="numberOfPassengerDto" class="form-control" required />
+        </div>
+
+        <div>
+            <label for="seatList">Seat List (Comma-separated):</label>
+            <input id="seatList" type="text" (input)="updateSeatList($event)" />
+        </div>
+        <div class="mb-3">
+            <label for="contactPersonDto" class="form-label">Contact Person</label>
+            <input type="text" id="contactPersonDto" name="contactPersonDto" formControlName="contactPersonDto"
+                class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+            <label for="contactPersonPhoneNumberDto" class="form-label">Contact Number</label>
+            <input type="text" id="contactPersonPhoneNumberDto" name="contactPersonPhoneNumberDto"
+                formControlName="contactPersonPhoneNumberDto" class="form-control" required />
+        </div>
+        <div class="mb-3">
+            <input type="hidden" id="issuedDateDto" name="issuedDateDto" formControlName="issuedDateDto"
+                class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+            <label for="pickUpLocationDto" class="form-label">Pick Up Location</label>
+
+            <select id="pickUpLocationDto" class="form-select" name="pickUpLocationDto"
+                formControlName="pickUpLocationDto">
+                <option value="" disabled selected>Choose any one...</option>
+                <option value="Old Bus Park">Old Bus Park</option>
+                <option value="New Bus Park">New Bus Park</option>
+
+            </select>
+
+        </div>
+
+        <div class="col-12">
+            <button type="submit" routerLink="trip-list" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+
+</div>

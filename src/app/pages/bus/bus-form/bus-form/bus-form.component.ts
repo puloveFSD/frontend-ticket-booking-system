@@ -44,7 +44,7 @@ export class BusFormComponent implements OnInit {
   saveBus() {
 
     const newBusDetails = this.busForm.value;
-    // alert(JSON.stringify(newBusDetails));
+     alert(JSON.stringify(newBusDetails));
     if (this.busIdForEdit) {
       this.busService.updateBus(this.busIdForEdit, newBusDetails).subscribe((result: string) => {
         this.router.navigate(['bus-list'])

@@ -19,28 +19,27 @@ export class TripListComponent implements OnInit {
 
 
   tripList: Trip[] = [];
-  
   locationList: Location[] = [];
   busList: Bus[] = [];
 
   constructor(private tripService: TripService,
-    private busService:BusService,
-    private locationService:LocationService
+    private busService: BusService,
+    private locationService: LocationService
   ) { }
 
   ngOnInit(): void {
     this.getTripList();
 
-      //fetch data of bus and location and load in drop down
-      this.busService.getBusList().subscribe((busData: Bus[]) => {
-        this.busList = busData;
-       
-      });
-  
-      this.locationService.getLocationList().subscribe((locationData: Location[]) => {
-        this.locationList = locationData;
-      });
-  
+    //fetch data of bus and location and load in drop down
+    this.busService.getBusList().subscribe((busData: Bus[]) => {
+      this.busList = busData;
+
+    });
+
+    this.locationService.getLocationList().subscribe((locationData: Location[]) => {
+      this.locationList = locationData;
+    });
+
   }
   getTripList(): void {
     this.tripService.getTripList().subscribe((tripList: Trip[]) => {

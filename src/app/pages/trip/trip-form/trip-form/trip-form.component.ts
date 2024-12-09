@@ -42,6 +42,7 @@ export class TripFormComponent implements OnInit {
       tripArrivalTimeDto: [''],
       startLocationDtoId: [''],
       destinationDtoId: [''],
+      ticketPricePerPersonDto:[''],
       busIdDto: ['']
     });
 

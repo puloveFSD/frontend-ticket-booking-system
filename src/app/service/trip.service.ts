@@ -16,6 +16,7 @@ export class TripService {
     })
   }
   constructor(private http: HttpClient) { }
+  
 
   getTripList(): Observable<Trip[]> {
     return this.http.get<Trip[]>(this.api, this.httpOptions);
@@ -27,8 +28,8 @@ export class TripService {
   deleteTrip(tripId: number): Observable<string> {
     return this.http.delete<string>(this.api.concat("/").concat(tripId + ''), { responseType: 'text' as 'json' })
   }
-  getTripById(tripId: number): Observable<Trip> {
-    return this.http.get<Trip>(this.api.concat('/').concat(tripId + ''));
+  getTripById(tripId: number): Observable<any> {
+    return this.http.get<any>(this.api.concat('/').concat(tripId + ''));
   }
   updateTrip(tripId: number, trip: Trip): Observable<string> {
     return this.http.put<string>(this.api.concat('/').concat(tripId + ''), trip, { responseType: 'text' as 'json' })
